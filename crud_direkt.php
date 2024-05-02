@@ -33,7 +33,7 @@ require_once 'config.php'; // DB-Verbindungsdaten aus externer Datei laden
   <h1><a href="crud_direkt.php">CRUD - PHP</a></h1>
 
 
-  <!-- 1. Ausgabe des Superklasse $users in einer Tabelle -->
+  <!-- 1. Ausgabe des Arrays $users in einer Tabelle -->
 
   <!-- 2. Einfügen eines neuen Datensatzes -->
 
