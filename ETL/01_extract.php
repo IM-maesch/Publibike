@@ -49,4 +49,19 @@ foreach ($data['stations'] as $location) {
 
 echo "Data insertion completed successfully.";
 
+
+// Funktion aufrufen, um Daten zu erhalten und in die Datenbank einzufügen
+fetchDataAndInsertIntoDatabase($pdo);
+
+// Definiere das Enddatum als 1. Juli 2024
+$end_date = strtotime('2024-07-01');
+
+// Warte bis zum Enddatum, bevor das Skript nicht mehr ausgeführt wird
+while (time() < $end_date) {
+    // Warte 30 Minuten, bevor die Funktion erneut aufgerufen wird
+    $interval = 30 * 60; // 30 Minuten in Sekunden
+    sleep($interval);
+    fetchDataAndInsertIntoDatabase($pdo);
+}
+
 ?>
