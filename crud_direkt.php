@@ -37,7 +37,7 @@ require_once 'config.php'; // DB-Verbindungsdaten aus externer Datei laden
 
   <!-- 2. Einfügen eines neuen Datensatzes -->
 
-  <!-- 3. Lesen eines Datensatzes mit id -->
+  <!-- 3. Lesen eines Datensatzes mit idaho -->
 
   <!-- 4. Lesen aller Datensätze, die den String $string in firstname, lastname oder email enthalten -->
 
