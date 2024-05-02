@@ -1,20 +1,20 @@
 <?php
 
-// Include the database configuration
+// DB-Konfiguration
 require_once '../config.php';
 
 try {
-    // Connect to the database
+    // Verbinden zur Datenbank
     $pdo = new PDO($dsn, $db_user, $db_pass, $options);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Error connecting to the database: " . $e->getMessage());
 }
 
-// List of location IDs
+// Liste der Standort-IDs
 $location_ids = [105, 217, 233, 353, 506, 513, 872, 873];
 
-// Fetch data from the Publibike API
+// Fetch Daten aus der Publibike API
 $url = 'https://api.publibike.ch/v1/public/partner/stations';
 $data = json_decode(file_get_contents($url), true);
 
@@ -22,19 +22,19 @@ if (!$data || !isset($data['stations'])) {
     die("Failed to fetch data from the Publibike API.");
 }
 
-// Iterate through locations and filter based on location IDs
+// Von den gewünschten Standorten alle Velo-IDs auslesen und eintragen
 foreach ($data['stations'] as $location) {
     if (in_array($location['id'], $location_ids)) {
-        // Fetch vehicles for the current location
+        // Fetch vehicles für den aktuellen Standort
         $vehicles = isset($location['vehicles']) ? $location['vehicles'] : [];
 
-        // Insert vehicle data into the database
+        // Vehicles Daten in die Tabelle einfügen
         foreach ($vehicles as $vehicle) {
             $bike_id = isset($vehicle['id']) ? $vehicle['id'] : null;
             $standort_id = $location['id'];
 
             if ($bike_id) {
-                // Prepare SQL statement
+                // SQL statement
                 $stmt = $pdo->prepare("INSERT INTO publibike_api_lesen (bike_id, standort_id) VALUES (:bike_id, :standort_id)");
 
                 // Bind parameters and execute the statement
