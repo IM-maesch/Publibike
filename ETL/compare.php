@@ -3,6 +3,9 @@
 require_once '../config.php';
 $pdo = new PDO($dsn, $db_user, $db_pass, $options);
 
+$amountOfRemovedBikes = 0;
+$amountOfAddedBikes = 0;
+
 $newData = getNewData();
 // print_r($newData);
 
@@ -14,32 +17,40 @@ $oldData = getOldData();
 $bewegungen = compare($oldData, $newData);
 print_r($bewegungen);
 
+
 function compare($oldData, $newData){
-    $addedBikeIds = [];
-    $removedBikeIds = [];
+    // Initialisiere ein leeres Array für hinzugefügte und entfernte Fahrräder pro Standort
+    $result = [];
     
-    // Compare each standort_id in the new data with the old data
+    // Vergleiche jede standort_id in den neuen Daten mit den alten Daten
     foreach ($newData as $standort_id => $newBikeIds) {
-        // If the standort_id exists in the old data
+        // Wenn die standort_id in den alten Daten existiert
         if (isset($oldData->{$standort_id})) {
-            // Find the difference in bike IDs between the old and new data
-            $addedBikeIds[$standort_id] = array_diff($newBikeIds, $oldData->{$standort_id});
-            $removedBikeIds[$standort_id] = array_diff($oldData->{$standort_id}, $newBikeIds);
+            // Finde die Anzahl der hinzugefügten und entfernten Fahrräder
+            $addedBikes = count(array_diff($newBikeIds, $oldData->{$standort_id}));
+            $removedBikes = count(array_diff($oldData->{$standort_id}, $newBikeIds));
         } else {
-            // If the standort_id is new in the new data, all bike IDs are considered added
-            $addedBikeIds[$standort_id] = $newBikeIds;
+            // Wenn die standort_id neu in den neuen Daten ist, werden alle Bike-IDs als hinzugefügt betrachtet
+            $addedBikes = count($newBikeIds);
+            $removedBikes = 0; // Keine Fahrräder entfernt
         }
+        
+        // Füge die Anzahl der hinzugefügten und entfernten Fahrräder zum Ergebnis-Array hinzu
+        $result[$standort_id] = ['added' => $addedBikes, 'removed' => $removedBikes];
     }
     
-    // Find standort_ids that are present in the old data but not in the new data
+    // Finde standort_ids, die in den alten Daten vorhanden, aber nicht in den neuen Daten sind
     $missingStandortIds = array_diff(array_keys((array)$oldData), array_keys((array)$newData));
     foreach ($missingStandortIds as $standort_id) {
-        // All bike IDs for missing standort_ids are considered removed
-        $removedBikeIds[$standort_id] = $oldData->{$standort_id};
+        // Alle Fahrräder für fehlende standort_ids gelten als entfernt
+        $result[$standort_id] = ['added' => 0, 'removed' => count($oldData->{$standort_id})];
     }
-    
-    return ['added' => $addedBikeIds, 'removed' => $removedBikeIds];
+
+    // Gebe das Ergebnis-Array zurück
+    return $result;
 }
+
+
 
 
 
@@ -112,5 +123,36 @@ try {
 } catch (Exception $e) {
     echo "Fehler: " . $e->getMessage();
 }
+}
+
+//Funktion von Nick, die die IDs der hinzugefügten und weggenommen Velos anzeigte. Obige Funktion zeigt nur noch die Anzahl.
+// function compare($oldData, $newData){
+//     $addedBikeIds = [];
+//     $removedBikeIds = [];
+    
+//     // Compare each standort_id in the new data with the old data
+//     foreach ($newData as $standort_id => $newBikeIds) {
+//         // If the standort_id exists in the old data
+//         if (isset($oldData->{$standort_id})) {
+//             // Find the difference in bike IDs between the old and new data
+//             $addedBikeIds[$standort_id] = array_diff($newBikeIds, $oldData->{$standort_id});
+//             $removedBikeIds[$standort_id] = array_diff($oldData->{$standort_id}, $newBikeIds);
+//         } else {
+//             // If the standort_id is new in the new data, all bike IDs are considered added
+//             $addedBikeIds[$standort_id] = $newBikeIds;
+//         }
+//     }
+    
+//     // Find standort_ids that are present in the old data but not in the new data
+//     $missingStandortIds = array_diff(array_keys((array)$oldData), array_keys((array)$newData));
+//     foreach ($missingStandortIds as $standort_id) {
+//         // All bike IDs for missing standort_ids are considered removed
+//         $removedBikeIds[$standort_id] = $oldData->{$standort_id};
+//     }
+    
+//     return ['added' => $addedBikeIds, 'removed' => $removedBikeIds];
+// }
 
 ?>
+
+
