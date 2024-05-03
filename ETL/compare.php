@@ -17,7 +17,7 @@ $oldData = getOldData();
 $bewegungen = compare($oldData, $newData);
 print_r($bewegungen);
 
-
+echo "test";
 function compare($oldData, $newData){
     // Initialisiere ein leeres Array für hinzugefügte und entfernte Fahrräder pro Standort
     $result = [];
@@ -36,14 +36,14 @@ function compare($oldData, $newData){
         }
         
         // Füge die Anzahl der hinzugefügten und entfernten Fahrräder zum Ergebnis-Array hinzu
-        $result[$standort_id] = ['added' => $addedBikes, 'removed' => $removedBikes];
+        $result[$standort_id] = ['added' => $addedBikes, 'removed' => $removedBikes, 'standortid' => $standort_id];
     }
     
     // Finde standort_ids, die in den alten Daten vorhanden, aber nicht in den neuen Daten sind
     $missingStandortIds = array_diff(array_keys((array)$oldData), array_keys((array)$newData));
     foreach ($missingStandortIds as $standort_id) {
         // Alle Fahrräder für fehlende standort_ids gelten als entfernt
-        $result[$standort_id] = ['added' => 0, 'removed' => count($oldData->{$standort_id})];
+        $result[$standort_id] = ['added' => 0, 'removed' => count($oldData->{$standort_id}), 'standortid' => $standort_id];
     }
 
     // Gebe das Ergebnis-Array zurück
