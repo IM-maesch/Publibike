@@ -113,5 +113,4 @@ try {
     echo "Fehler: " . $e->getMessage();
 }
 
-}
 ?>
