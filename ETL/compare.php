@@ -15,9 +15,10 @@ $oldData = getOldData();
 // print_r($oldData);
 
 $bewegungen = compare($oldData, $newData);
-print_r($bewegungen);
 
-echo "test";
+deleteData();
+saveNewData($newData);
+
 function compare($oldData, $newData){
     // Initialisiere ein leeres Array für hinzugefügte und entfernte Fahrräder pro Standort
     $result = [];
@@ -123,6 +124,46 @@ try {
 } catch (Exception $e) {
     echo "Fehler: " . $e->getMessage();
 }
+}
+
+
+function deleteData() {
+    global $pdo; // Zugriff auf das PDO-Objekt, das außerhalb der Funktion deklariert wurde
+
+    try {
+        // SQL-Abfrage vorbereiten und ausführen, um Daten aus der Tabelle zu löschen
+        $stmt = $pdo->prepare("DELETE FROM publibike_api_lesen");
+        $stmt->execute();
+        
+        echo "Daten wurden erfolgreich gelöscht.";
+    } catch (Exception $e) {
+        // Fehlerbehandlung bei Datenbankzugriff
+        echo "Fehler: " . $e->getMessage();
+    }
+}
+
+function saveNewData($newData) {
+    global $pdo; // Zugriff auf das PDO-Objekt, das außerhalb der Funktion deklariert wurde
+
+    try {
+        // Durch jede Standort-ID iterieren
+        foreach ($newData as $standort_id => $vehicle_ids) {
+            // Durch jedes Fahrzeug für den aktuellen Standort iterieren und in die Datenbank einfügen
+            foreach ($vehicle_ids as $vehicle_id) {
+                // SQL-Abfrage vorbereiten und ausführen, um Daten in die Tabelle publibike_api_lesen einzufügen
+                $stmt = $pdo->prepare("INSERT INTO publibike_api_lesen (standort_id, bike_id) VALUES (:standort_id, :bike_id)");
+                $stmt->execute([
+                    'standort_id' => $standort_id,
+                    'bike_id' => $vehicle_id
+                ]);
+            }
+        }
+
+        echo "Neue Daten erfolgreich gespeichert.";
+    } catch (Exception $e) {
+        // Fehlerbehandlung bei Datenbankzugriff
+        echo "Fehler: " . $e->getMessage();
+    }
 }
 
 //Funktion von Nick, die die IDs der hinzugefügten und weggenommen Velos anzeigte. Obige Funktion zeigt nur noch die Anzahl.
