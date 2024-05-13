@@ -1,7 +1,7 @@
 <?php
 
 // Inkludieren der Datenbankkonfiguration
-require_once '../config.php';
+require_once 'config.php';
 
 try {
     // Verbindung zur Datenbank herstellen

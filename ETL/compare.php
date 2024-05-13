@@ -1,6 +1,6 @@
 <?php
 
-require_once '../config.php';
+require_once 'config.php';
 $pdo = new PDO($dsn, $db_user, $db_pass, $options);
 
 $amountOfRemovedBikes = 0;

@@ -1,7 +1,7 @@
 <?php
 
 // Datenbankkonfiguration einbinden
-require_once '../config.php';
+require_once 'config.php';
 
 // Header setzen, um JSON-Inhaltstyp zurückzugeben
 header('Content-Type: application/json');
