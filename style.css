@@ -85,12 +85,12 @@ body {
   margin: 0;
   padding: 0;
   background-color: #2D0B65;
-  color: white;
+  color: #DF4F4F;
 }
 
 header {
   background: #2D0B65;
-  color: white;
+  color: #DF4F4F;
   padding: 10px 0;
   position: sticky;
   top: 0;
@@ -111,20 +111,15 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: #DF4F4F;
   text-decoration: none;
   font-weight: bold;
-}
-
-section {
-  padding: 20px;
-  border-bottom: 1px solid #ccc;
 }
 
 h1 {
   font-family: 'Nico Moji', sans-serif;
   text-align: center;
-  color: #CED766; /* Farbe für Chur */
+  color: #DF4F4F; /* Farbe für Website */
 }
 
 .container {
@@ -146,36 +141,30 @@ h1 {
 }
 
 .box, .textbox, .long-box, .graphic {
-  background-color: #f4f4f4;
+  background-color: #CED766;
   padding: 20px;
   margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 60px;
   color: #2D0B65;
-}
-
-.box#chur {
-  background-color: #CED766;
-}
-
-.box#zurich {
-  background-color: #66D793;
 }
 
 .box#bern {
   background-color: #946AEE;
 }
 
+.textbox#bern {
+  background-color: #946AEE;
+}
+.box#fribourg {
+  background-color: #73D9EF;
+}
+
 .box#fribourg, .textbox#fribourg {
   background-color: #73D9EF;
 }
 
-.textbox#bern {
-  background-color: #946AEE;
-}
-
-.textbox#chur {
-  background-color: #CED766;
+.box#zurich {
+  background-color: #66D793;
 }
 
 footer {
