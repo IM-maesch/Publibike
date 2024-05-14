@@ -75,8 +75,6 @@ tr:nth-child(even) {
 }
 
 
-
-
 /* style.css */
 /* Versuch_Lina */
 
@@ -128,22 +126,49 @@ h1 {
   flex-wrap: wrap;
 }
 
-.left-column, .right-column {
+.left-column {
   display: flex;
   flex-direction: column;
   flex: 1;
+  margin: 10px;
+  color: #CED766;
+  text-align: center;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
   margin: 10px;
 }
 
 .center-column {
   flex: 2;
-  margin: 10px;
+  margin: 20px;
+  padding: 50px;
+  border-radius: 90px;
 }
 
-.box, .textbox, .long-box, .graphic {
+.box, .textbox {
   background-color: #CED766;
-  padding: 20px;
-  margin: 10px 0;
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 60px;
+  color: #2D0B65;
+}
+
+.long-box {
+  background-color: #CED766;
+  padding: 220px;
+  margin: 60px;
+  border-radius: 150px;
+  color: #2D0B65;
+}
+
+.grafic {
+  background-color: white;
+  padding: 30px;
+  margin: 20px 0;
   border-radius: 60px;
   color: #2D0B65;
 }
@@ -155,11 +180,8 @@ h1 {
 .textbox#bern {
   background-color: #946AEE;
 }
-.box#fribourg {
-  background-color: #73D9EF;
-}
 
-.box#fribourg, .textbox#fribourg {
+.box#fribourg {
   background-color: #73D9EF;
 }
 
@@ -167,13 +189,23 @@ h1 {
   background-color: #66D793;
 }
 
+.box#bern, .box#fribourg, .box#zurich {
+  position: relative;
+  right: -10px;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+h1#hypothese1, h1#hypothese2, h1#hypothese3 {
+  color: #CED766;
+}
+
 footer {
   background: #2D0B65;
-  color: white;
+  color: #DF4F4F;
   text-align: center;
   padding: 10px 0;
   position: fixed;
   bottom: 0;
   width: 100%;
 }
-
