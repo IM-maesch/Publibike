@@ -13,6 +13,7 @@ async function holeDaten(url) {
         console.log(error);
     }
 }
+
 ///////////////
 // Don't touch it //
 ///////////////
@@ -36,11 +37,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 })
 
 
-/*const myChart = new Chart(ctx, { ... });*/
-
-
-import Chart from 'chart.js/auto';
-
 
 const ctx = document.getElementById('myChart');
 
@@ -50,7 +46,7 @@ const ctx = document.getElementById('myChart');
       labels: ['Fribourg', 'Bern', 'Zurich', 'Chur'],
       datasets: [{
         label: '# of Votes',
-        data: [12, 19, 3, 5],
+        data: [52, 19, 3, 5],
         borderWidth: 1
       }]
     },
@@ -68,17 +64,6 @@ const ctx = document.getElementById('myChart');
 
 
   /* JS von Nick*/
-  console.log("Hello, World!");
-
-async function fetchData() {
-    try {
-        const response = await fetch('https://376009-28.web.fhgr.ch/endpoint.php');
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error(error);
-    }
-}
 
 async function main() {
     let data = await fetchData();
