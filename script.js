@@ -18,18 +18,6 @@ async function holeDaten(url) {
 // --------------------------
 
 
-// Define colors for each standort_id
-const standortColors = {
-  105: '#73D9EF', // Fribourg
-  217: '#946AEE', // Bern
-  233: '#73D9EF', // Fribourg (same color as 105)
-  353: '#946AEE', // Bern (same color as 217)
-  506: '#73D9EF', // Fribourg (same color as 105)
-  513: '#66D793', // Zürich
-  872: '#CED766', // Chur
-  873: '#CED766'  // Chur (same color as 872)
-};
-
 
 document.addEventListener('DOMContentLoaded', async () => {
   // URL to fetch data from
@@ -45,6 +33,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   let labels = [];
   let datasets = [];
 
+  // Define colors for each group
+  const groupColors = {
+      'Fribourg': '#73D9EF',
+      'Bern': '#946AEE',
+      'Zürich': '#66D793',
+      'Chur': '#CED766'
+  };
+
   // Loop through each group in the data
   Object.entries(data).forEach(([groupName, groupData]) => {
       // Extract timestamps and standortaktivitaet from the groupData
@@ -55,13 +51,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       datasets.push({
           label: groupName, // Label for the dataset
           data: standortaktivitaet, // Standortaktivitaet values
-          borderColor: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`, // Random color for each line
+          borderColor: groupColors[groupName], // Assign color based on group name
           fill: false // Do not fill area under the line
       });
 
       // Add timestamps to the labels array
       labels = timestamps;
   });
+
   
 
 // // DOMContentLoaded event listener
