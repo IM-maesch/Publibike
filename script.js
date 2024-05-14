@@ -68,15 +68,18 @@ Object.entries(data).forEach(([standort_id, entries]) => {
             datasets: datasets // Array of dataset objects
         },
         options: {
-          elements: {
-              point: {
-                  
-              }
-          },
             scales: {
               x: {
-                categoryPercentage: 0.8
-              },
+                type: 'time', // Use time scale for x-axis
+                time: {
+                  unit: 'day', // Display timestamps by day
+                    tooltipFormat: 'll', // Format for tooltips (optional)
+                    displayFormats: {
+                      day: 'YYYY-MM-DD' // Format for the axis labels
+                  }
+                },
+                beginAtZero: true
+            },
               y: {
                   beginAtZero: true
               }
@@ -84,11 +87,6 @@ Object.entries(data).forEach(([standort_id, entries]) => {
         }
     });
 });
-
-
-  
-
-
 
 
 
