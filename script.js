@@ -1,79 +1,109 @@
 let blub = document.querySelector('#blub');
 
-///////////////
-// Don't touch it //
-///////////////
+// --------------------------
+// Don't touch this
+// Function to fetch data from the URL
+// --------------------------
 async function holeDaten(url) {
     try {
         let response = await fetch(url);
         let data = await response.json();
         return data;
-    }
-    catch (error) {
+    } catch (error) {
         console.log(error);
     }
 }
+// --------------------------
+// Don't touch this
+// --------------------------
 
-///////////////
-// Don't touch it //
-///////////////
-
-
-// dom loaded async
+// DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', async () => {
-  let url = 'https://727502-4.web.fhgr.ch/ETL/04_unload.php'
-  let data = await holeDaten(url);
-  console.log(data);
-  console.log(data[105])
-  console.log(data[105][0])
-  console.log(data[105][0].timestamp)
-  console.log(data[105][0].standortaktivitaet)
+    // URL to fetch data from
+    let url = 'https://727502-4.web.fhgr.ch/ETL/04_unload.php';
 
-  data[217].forEach (element => {
-    
-    blub.innerHTML += element.timestamp + ' - ' + element.standortaktivitaet + '<br>'
+    // Fetch data from the URL
+    let data = await holeDaten(url);
 
-  })
-})
+    // Log the fetched data for debugging
+    console.log(data);
 
+    // Initialize arrays to hold labels and datasets
+    let labels = [];
+    let datasets = [];
 
+    // Loop through each entry in the data
+    // Loop through each entry in the data
+Object.entries(data).forEach(([standort_id, entries]) => {
+  // Sort entries by timestamp
+  entries.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
 
-const ctx = document.getElementById('myChart');
+  // Initialize an array to hold standortaktivitaet values for the current standort_id
+  let standortaktivitaetValues = [];
 
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['Fribourg', 'Bern', 'Zurich', 'Chur'],
-      datasets: [{
-        label: '# of Votes',
-        data: [52, 19, 3, 5],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
+  // Push labels (timestamps) and standortaktivitaet values to respective arrays
+  entries.forEach(entry => {
+      labels.push(entry.timestamp);
+      standortaktivitaetValues.push(entry.standortaktivitaet);
   });
 
+  // Create a dataset object for the current standort_id
+  datasets.push({
+      label: `Standort ${standort_id}`, // Label for the dataset
+      data: standortaktivitaetValues, // Standortaktivitaet values
+      borderColor: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`, // Random color for each line
+      fill: false // Do not fill area under the line
+  });
+});
+
+
+    // Get the canvas element by its id
+    const ctx = document.getElementById('standortaktivitaet');
+
+    // Create the chart
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels, // Timestamps for x-axis
+            datasets: datasets // Array of dataset objects
+        },
+        options: {
+          elements: {
+              point: {
+                  
+              }
+          },
+            scales: {
+              x: {
+                categoryPercentage: 0.8
+              },
+              y: {
+                  beginAtZero: true
+              }
+            }
+        }
+    });
+});
+
+
+  
 
 
 
 
-  /* JS von Nick*/
+
+  /* JS von Nick
 
 async function main() {
     let data = await fetchData();
     console.log(data);
+    console.log("moin");
 
     let date = data.data.date;
     let temp_chur = data.data.chur;
     let temp_bern = data.data.bern;
 
-    const ctx = document.getElementById('temperatureChart').getContext('2d');
+    const ctx = document.getElementById('standortaktivitaet').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -121,5 +151,5 @@ async function main() {
 
 }
 
-main();
+main();*/
 
