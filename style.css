@@ -125,8 +125,6 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-
-/* style.css */
 /* Versuch_Lina */
 
 body {
@@ -164,19 +162,23 @@ nav ul li a {
 }
 
 .menuchur {
-  color: #CED766; /* Chur */
+  color: #CED766;
+  font-family: 'Nico Moji', sans-serif; /* Chur */
 }
 
 .menuzurich {
-  color: #66D793; /* Zürich */
+  color: #66D793; 
+  font-family: 'Nico Moji', sans-serif; /* Zürich */
 }
 
 .menubern {
-  color: #946AEE; /* Bern */
+  color: #946AEE;
+  font-family: 'Nico Moji', sans-serif; /* Bern */
 }
 
 .menufribourg {
-  color: #73D9EF; /* Fribourg */
+  color: #73D9EF;
+  font-family: 'Nico Moji', sans-serif; /* Fribourg */
 }
 
 h1 {
@@ -252,23 +254,27 @@ h2 {
   background-color: #946AEE;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  font-family: 'Nico Moji', sans-serif;
 }
 
 .box#fribourg {
   background-color: #73D9EF;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  font-family: 'Nico Moji', sans-serif;
 }
 
 .box#zurich {
   background-color: #66D793;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  font-family: 'Nico Moji', sans-serif;
 }
 
 .box#hypothese1, .box#hypothese2, .box#hypothese3 {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  font-family: 'Nico Moji', sans-serif;
 }
 
 h1#hypothese1, h1#hypothese2, h1#hypothese3 {
