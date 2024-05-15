@@ -203,36 +203,32 @@ h2 {
 .left-column {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  margin: 5px;
+  margin: 120px;
   text-align: center;
-  max-width: 300px;
+  max-width: 200px;
 }
 
 .right-column {
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin: 10px;
+  margin: 20px;
 }
 
 .center-column {
-  flex: 2;
-  margin: 30px;
+  flex: 60;
+  margin: 50px;
 }
 
 .box {
   background-color: #CED766;
-  padding: 60px;
+  padding: 40px;
   margin: 20px 0;
-  border-radius: 60px;
+  border-radius: 100px;
   color: #2D0B65;
 }
 
 .textbox {
-  padding: 30px;
-  margin: 20px;
-  border-radius: 60px;
   color:  #CED766;
 }
 
@@ -240,7 +236,7 @@ h2 {
   background-color: #CED766;
   padding: 90px;
   margin: 30px;
-  border-radius: 70px;
+  border-radius: 100px;
   color: #2D0B65;
 }
 
@@ -257,6 +253,7 @@ h2 {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-family: 'Nico Moji', sans-serif;
+  text-align: center;
 }
 
 .box#bern {
@@ -264,6 +261,7 @@ h2 {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-family: 'Nico Moji', sans-serif;
+  text-align: center;
 }
 
 .box#fribourg {
@@ -271,6 +269,7 @@ h2 {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-family: 'Nico Moji', sans-serif;
+  text-align: center;
 }
 
 .box#zurich {
@@ -278,6 +277,7 @@ h2 {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-family: 'Nico Moji', sans-serif;
+  text-align: center;
 }
 
 footer {
@@ -291,7 +291,7 @@ footer {
 }
 
 
-/* Responsive Design */
+/* Responsive Design in Arbeit */
 @media (max-width: 375px) {
   .container {
     flex-direction: column;
