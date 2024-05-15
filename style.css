@@ -14,14 +14,12 @@ h2 {
 /* Define the custom font */
 @font-face {
   font-family: 'Nico Moji';
-  src: url('../Publibike/Fonts/Nico\ Moji/') format('truetype');
-  /* You can add more formats if you have them, e.g., .woff, .woff2 */
-  /* Example: url('../fonts/CustomFont.woff2') format('woff2'), */
+  src: url('Fonts/Nico Moji/nicomoji-plus_v0.9.ttf') format('truetype');
 }
 
 /* Apply the custom font to h1 elements */
 h1 {
-  font-family: 'CustomFont', sans-serif;
+  font-family: 'Nico Moji', sans-serif;
   font-size: 2.5em; /* Adjust the font size as needed */
   color: #DF4F4F; /* Example color, adjust as needed */
   text-align: center; /* Example alignment, adjust as needed */
@@ -268,7 +266,7 @@ h2 {
   border-bottom-right-radius: 0;
 }
 
-.textbox#hypothese1, .textbox#hypothese2, .textbox#hypothese3 {
+.box#hypothese1, .box#hypothese2, .box#hypothese3 {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
