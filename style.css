@@ -38,7 +38,7 @@ h1 {
 #gif-container {
   position: relative;
   width: 600px; /* Width of the GIF */
-  height: 350px; /* Height of the GIF */
+  height: 600px; /* Height of the GIF */
   margin: 0 auto; /* Centers the container horizontally */
 }
 
