@@ -87,7 +87,7 @@ button:hover {
 
 /* Links */
 a {
-  color: #007bff;
+  color: white;
   text-decoration: none;
 }
 
@@ -141,7 +141,6 @@ body {
 
 header {
   background: #2D0B65;
-  color: #DF4F4F;
   padding: 10px 0;
   position: sticky;
   top: 0;
@@ -162,9 +161,24 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #DF4F4F; 
   text-decoration: none;
   font-weight: bold;
+}
+
+.menuchur {
+  color: #CED766; /* Chur */
+}
+
+.menuzurich {
+  color: #66D793; /* Zürich */
+}
+
+.menubern {
+  color: #946AEE; /* Bern */
+}
+
+.menufribourg {
+  color: #73D9EF; /* Fribourg */
 }
 
 h1 {
