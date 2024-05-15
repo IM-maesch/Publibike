@@ -12,15 +12,27 @@ h1, h2 {
 }
 
 
-/* Hover effect for the GIF */
+/* Centering and maintaining aspect ratio for the GIF */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh; /* Full height of the viewport */
+}
+
 #veloAnimation {
+  width: auto;
+  height: auto;
+  max-width: 100%; /* Responsive width */
+  max-height: 350px; /* Adjust this value to fit your design */
   transition: all 0.3s ease;
 }
 
 #veloAnimation:hover {
   content: url('Velo Animation_bunt.gif');
 }
-
 /* Formulare und Eingabefelder */
 input[type="text"], input[type="email"], button {
   padding: 10px;
