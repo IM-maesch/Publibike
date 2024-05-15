@@ -14,14 +14,14 @@ h2 {
 /* Define the custom font */
 @font-face {
   font-family: 'Nico Moji';
-  src: url('../Publibike/Fonts/Nico\ Moji/') format('truetype');
+  src: url('../Publibike/Fonts/Nico Moji/nicomoji-plus_v0.9.ttf') format('nicomoji-plus_v0.9ttf');
   /* You can add more formats if you have them, e.g., .woff, .woff2 */
   /* Example: url('../fonts/CustomFont.woff2') format('woff2'), */
 }
 
 /* Apply the custom font to h1 elements */
 h1 {
-  font-family: 'CustomFont', sans-serif;
+  font-family: 'Nico Moji', sans-serif;
   font-size: 2.5em; /* Adjust the font size as needed */
   color: #DF4F4F; /* Example color, adjust as needed */
   text-align: center; /* Example alignment, adjust as needed */
