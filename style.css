@@ -172,20 +172,20 @@ h1 {
 
 .box#bern {
   background-color: #946AEE;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .box#fribourg {
   background-color: #73D9EF;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .box#zurich {
   background-color: #66D793;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .textbox#hypothese1, .textbox#hypothese2, .textbox#hypothese3 {
