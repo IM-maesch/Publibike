@@ -20,7 +20,7 @@ h2 {
 /* Apply the custom font to h1 elements */
 h1 {
   font-family: 'Nico Moji', sans-serif;
-  font-size: 2.5em; /* Adjust the font size as needed */
+  font-size: 3em; /* Adjust the font size as needed */
   color: #DF4F4F; /* Example color, adjust as needed */
   text-align: center; /* Example alignment, adjust as needed */
 }
@@ -161,14 +161,14 @@ nav ul li a {
   font-weight: bold;
 }
 
+.menufribourg {
+  color: #73D9EF;
+  font-family: 'Nico Moji', sans-serif; /* Fribourg */
+}
+
 .menuchur {
   color: #CED766;
   font-family: 'Nico Moji', sans-serif; /* Chur */
-}
-
-.menuzurich {
-  color: #66D793; 
-  font-family: 'Nico Moji', sans-serif; /* Zürich */
 }
 
 .menubern {
@@ -176,9 +176,9 @@ nav ul li a {
   font-family: 'Nico Moji', sans-serif; /* Bern */
 }
 
-.menufribourg {
-  color: #73D9EF;
-  font-family: 'Nico Moji', sans-serif; /* Fribourg */
+.menuzurich {
+  color: #66D793; 
+  font-family: 'Nico Moji', sans-serif; /* Zürich */
 }
 
 h1 {
@@ -203,8 +203,9 @@ h2 {
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin: 10px;
+  margin: 5px;
   text-align: center;
+  max-width: 375px;
 }
 
 .right-column {
@@ -221,7 +222,7 @@ h2 {
 
 .box {
   background-color: #CED766;
-  padding: 30px;
+  padding: 60px;
   margin: 20px 0;
   border-radius: 60px;
   color: #2D0B65;
@@ -236,9 +237,9 @@ h2 {
 
 .long-box {
   background-color: #CED766;
-  padding: 50px;
-  margin: 10px;
-  border-radius: 60px;
+  padding: 90px;
+  margin: 30px;
+  border-radius: 70px;
   color: #2D0B65;
 }
 
@@ -250,15 +251,22 @@ h2 {
   color: #2D0B65;
 }
 
-.box#bern {
-  background-color: #946AEE;
+.box#fribourg {
+  background-color: #73D9EF;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-family: 'Nico Moji', sans-serif;
 }
 
-.box#fribourg {
-  background-color: #73D9EF;
+.box#chur {
+  background-color:  #CED766;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-family: 'Nico Moji', sans-serif;
+}
+
+.box#bern {
+  background-color: #946AEE;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-family: 'Nico Moji', sans-serif;
@@ -277,10 +285,6 @@ h2 {
   font-family: 'Nico Moji', sans-serif;
 }
 
-h1#hypothese1, h1#hypothese2, h1#hypothese3 {
-  color: #CED766;
-}
-
 footer {
   background: #2D0B65;
   color: #DF4F4F;
@@ -290,3 +294,58 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+/* Responsive Design */
+@media (max-width: 375px) {
+  .container {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .center-column {
+    order: 1; /* Display center-column first */
+    padding: 10px;
+    margin: 0px;
+  }
+
+  .left-column {
+    order: 2; /* Display left-column second */
+    padding: 10px;
+    }
+
+  .right-column {
+    order: 3; /* Display right-column third */
+    padding: 10px;
+    margin: 30px;
+  }
+
+  .long-box {
+    padding: 50px;
+    margin: 10px 0;
+    border-radius: 180px;
+    max-width: 400px;
+  }
+
+  .textbox {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  #gif-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header, footer {
+    padding: 5px 0;
+    max-width: 400px;
+  }
+
+  nav ul li {
+    display: block;
+    }
+}
+
+
+
