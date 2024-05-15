@@ -7,10 +7,25 @@ body {
   color: #333;
 }
 
-h1, h2 {
+h2 {
   color: #333;
 }
 
+/* Define the custom font */
+@font-face {
+  font-family: 'Nico Moji';
+  src: url('../Publibike/Fonts/Nico\ Moji/') format('truetype');
+  /* You can add more formats if you have them, e.g., .woff, .woff2 */
+  /* Example: url('../fonts/CustomFont.woff2') format('woff2'), */
+}
+
+/* Apply the custom font to h1 elements */
+h1 {
+  font-family: 'CustomFont', sans-serif;
+  font-size: 2.5em; /* Adjust the font size as needed */
+  color: #DF4F4F; /* Example color, adjust as needed */
+  text-align: center; /* Example alignment, adjust as needed */
+}
 
 /* Centering and maintaining aspect ratio for the GIF */
 #home {
@@ -22,17 +37,32 @@ h1, h2 {
   min-height: 100vh; /* Full height of the viewport */
 }
 
-#veloAnimation {
-  width: auto;
-  height: auto;
-  max-width: 100%; /* Responsive width */
-  max-height: 350px; /* Adjust this value to fit your design */
-  transition: all 0.3s ease;
+#gif-container {
+  position: relative;
+  width: 600px; /* Width of the GIF */
+  height: 350px; /* Height of the GIF */
 }
 
-#veloAnimation:hover {
-  content: url('Velo Animation_bunt.gif');
+#veloAnimation, #veloAnimation_bunt {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
 }
+
+#veloAnimation_bunt {
+  opacity: 0;
+}
+
+#gif-container:hover #veloAnimation_bunt {
+  opacity: 1;
+}
+
+#gif-container:hover #veloAnimation {
+  opacity: 0;
+}
+
 /* Formulare und Eingabefelder */
 input[type="text"], input[type="email"], button {
   padding: 10px;
