@@ -11,6 +11,16 @@ h1, h2 {
   color: #333;
 }
 
+
+/* Hover effect for the GIF */
+#veloAnimation {
+  transition: all 0.3s ease;
+}
+
+#veloAnimation:hover {
+  content: url('Velo Animation_bunt.gif');
+}
+
 /* Formulare und Eingabefelder */
 input[type="text"], input[type="email"], button {
   padding: 10px;
