@@ -201,7 +201,7 @@ h2 {
 
 .center-column {
   flex: 2;
-  margin: 10px;
+  margin: 30px;
 }
 
 .box {
@@ -254,8 +254,8 @@ h2 {
 }
 
 .textbox#hypothese1, .textbox#hypothese2, .textbox#hypothese3 {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 h1#hypothese1, h1#hypothese2, h1#hypothese3 {
