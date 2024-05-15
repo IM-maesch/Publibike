@@ -90,4 +90,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 });
 
+// Function to handle zooming
+function handleZoom(event) {
+    // Check if the shift key is pressed (or any other condition to trigger zoom)
+    if (event.shiftKey) {
+        // Access the chart instance
+        let chart = Chart.getChart(ctx); // ctx is the canvas context defined earlier
 
+        // Implement zoom logic here
+        // For example, you could adjust the chart's options
+        // For simplicity, let's just increase the borderWidth of the first dataset
+        chart.data.datasets[0].borderWidth += 1;
+
+        // Update the chart
+        chart.update();
+    }
+}
+
+
+// Add event listener for mousewheel event (for zooming)
+document.getElementById('myChart').addEventListener('wheel', handleZoom);
