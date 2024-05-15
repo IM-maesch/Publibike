@@ -17,7 +17,7 @@ async function holeDaten(url) {
 // Don't touch this
 // --------------------------
 
-
+const ctx = document.getElementById('standortaktivitaet');
 
 document.addEventListener('DOMContentLoaded', async () => {
   // URL to fetch data from
@@ -59,9 +59,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       labels = timestamps;
   });
 
-    // Get the canvas element by its id
-    const ctx = document.getElementById('standortaktivitaet');
-
     // Create the chart
     new Chart(ctx, {
         type: 'line',
@@ -92,21 +89,30 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Function to handle zooming
 function handleZoom(event) {
-    // Check if the shift key is pressed (or any other condition to trigger zoom)
-    if (event.shiftKey) {
-        // Access the chart instance
-        let chart = Chart.getChart(ctx); // ctx is the canvas context defined earlier
+    // Access the chart instance
+    let chart = Chart.getChart(ctx);
 
-        // Implement zoom logic here
-        // For example, you could adjust the chart's options
-        // For simplicity, let's just increase the borderWidth of the first dataset
-        chart.data.datasets[0].borderWidth += 1;
+    // Determine the direction of the zoom based on the event's deltaY
+    let zoomDirection = event.deltaY > 0 ? -1 : 1;
 
-        // Update the chart
-        chart.update();
-    }
+    // Calculate the zoom factor (you can adjust this value based on your preference)
+    let zoomFactor = 0.1; // Example: Zoom by 10% for each scroll
+
+    // Calculate the new minimum and maximum values for the x-axis
+    let xAxis = chart.scales['x'];
+    let newMin = xAxis.min + zoomDirection * (xAxis.max - xAxis.min) * zoomFactor;
+    let newMax = xAxis.max - zoomDirection * (xAxis.max - xAxis.min) * zoomFactor;
+
+    // Update the x-axis scale with the new minimum and maximum values
+    xAxis.options.min = newMin;
+    xAxis.options.max = newMax;
+
+    // Update the chart
+    chart.update();
+
+    // Prevent the default scroll behavior (e.g., page scrolling)
+    event.preventDefault();
 }
 
-
 // Add event listener for mousewheel event (for zooming)
-document.getElementById('myChart').addEventListener('wheel', handleZoom);
+ctx.addEventListener('wheel', handleZoom);
