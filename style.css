@@ -131,22 +131,19 @@ h1 {
   flex-direction: column;
   flex: 1;
   margin: 10px;
-  color: #CED766;
   text-align: center;
 }
 
 .right-column {
   display: flex;
   flex-direction: column;
-  flex: 2;
+  flex: 1;
   margin: 10px;
 }
 
 .center-column {
   flex: 2;
-  margin: 20px;
-  padding: 50px;
-  border-radius: 90px;
+  margin: 10px;
 }
 
 .box, .textbox {
@@ -159,13 +156,13 @@ h1 {
 
 .long-box {
   background-color: #CED766;
-  padding: 220px;
-  margin: 60px;
-  border-radius: 150px;
+  padding: 50px;
+  margin: 10px;
+  border-radius: 60px;
   color: #2D0B65;
 }
 
-.grafic {
+.graphic {
   background-color: white;
   padding: 30px;
   margin: 20px 0;
@@ -175,25 +172,25 @@ h1 {
 
 .box#bern {
   background-color: #946AEE;
-}
-
-.textbox#bern {
-  background-color: #946AEE;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .box#fribourg {
   background-color: #73D9EF;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .box#zurich {
   background-color: #66D793;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-.box#bern, .box#fribourg, .box#zurich {
-  position: relative;
-  right: -10px;
-  border-top-right-radius: 60px;
-  border-bottom-right-radius: 60px;
+.textbox#hypothese1, .textbox#hypothese2, .textbox#hypothese3 {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 h1#hypothese1, h1#hypothese2, h1#hypothese3 {
