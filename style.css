@@ -120,6 +120,12 @@ h1 {
   color: #DF4F4F; /* Farbe für Website */
 }
 
+h2 {
+  font-family: 'Nico Moji', sans-serif;
+  text-align: center;
+  color: #CED766; /* Farbe für links unten */
+}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -146,12 +152,19 @@ h1 {
   margin: 10px;
 }
 
-.box, .textbox {
+.box {
   background-color: #CED766;
   padding: 30px;
   margin: 20px 0;
   border-radius: 60px;
   color: #2D0B65;
+}
+
+.textbox {
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 60px;
+  color:  #CED766;
 }
 
 .long-box {
