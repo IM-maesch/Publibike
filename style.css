@@ -20,7 +20,7 @@ h2 {
 /* Apply the custom font to h1 elements */
 h1 {
   font-family: 'Nico Moji', sans-serif;
-  font-size: 3em; /* Adjust the font size as needed */
+  font-size: 3.5em; /* Adjust the font size as needed */
   color: #DF4F4F; /* Example color, adjust as needed */
   text-align: center; /* Example alignment, adjust as needed */
 }
@@ -39,6 +39,7 @@ h1 {
   position: relative;
   width: 600px; /* Width of the GIF */
   height: 350px; /* Height of the GIF */
+  margin: 0 auto; /* Centers the container horizontally */
 }
 
 #veloAnimation, #veloAnimation_bunt {
@@ -95,7 +96,7 @@ a:hover {
 
 /* Abschnitte und Abstand */
 h1, h2 {
-  margin-top: 40px;
+  margin-top: 60px;
   margin-bottom: 10px;
 }
 
@@ -161,11 +162,6 @@ nav ul li a {
   font-weight: bold;
 }
 
-.menufribourg {
-  color: #73D9EF;
-  font-family: 'Nico Moji', sans-serif; /* Fribourg */
-}
-
 .menuchur {
   color: #CED766;
   font-family: 'Nico Moji', sans-serif; /* Chur */
@@ -174,6 +170,11 @@ nav ul li a {
 .menubern {
   color: #946AEE;
   font-family: 'Nico Moji', sans-serif; /* Bern */
+}
+
+.menufribourg {
+  color: #73D9EF;
+  font-family: 'Nico Moji', sans-serif; /* Fribourg */
 }
 
 .menuzurich {
@@ -205,7 +206,7 @@ h2 {
   flex: 1;
   margin: 5px;
   text-align: center;
-  max-width: 375px;
+  max-width: 300px;
 }
 
 .right-column {
@@ -230,7 +231,7 @@ h2 {
 
 .textbox {
   padding: 30px;
-  margin: 20px 0;
+  margin: 20px;
   border-radius: 60px;
   color:  #CED766;
 }
@@ -251,13 +252,6 @@ h2 {
   color: #2D0B65;
 }
 
-.box#fribourg {
-  background-color: #73D9EF;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  font-family: 'Nico Moji', sans-serif;
-}
-
 .box#chur {
   background-color:  #CED766;
   border-top-right-radius: 0;
@@ -272,16 +266,17 @@ h2 {
   font-family: 'Nico Moji', sans-serif;
 }
 
-.box#zurich {
-  background-color: #66D793;
+.box#fribourg {
+  background-color: #73D9EF;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-family: 'Nico Moji', sans-serif;
 }
 
-.box#hypothese1, .box#hypothese2, .box#hypothese3 {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+.box#zurich {
+  background-color: #66D793;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   font-family: 'Nico Moji', sans-serif;
 }
 
@@ -295,6 +290,7 @@ footer {
   width: 100%;
 }
 
+
 /* Responsive Design */
 @media (max-width: 375px) {
   .container {
@@ -302,17 +298,23 @@ footer {
     padding: 30px;
   }
 
-  .center-column {
-    order: 1; /* Display center-column first */
-    padding: 10px;
-    margin: 0px;
+  @media (max-width: 420px) {
+    #gif-container {
+      width: 100%; /* Full width on small screens */
+      height: auto; /* Maintain aspect ratio */
+    }
+  
+    #gif-container img {
+      width: 100%; /* Full width of the parent container */
+      height: auto; /* Maintain aspect ratio */
+    }
   }
 
-  .left-column {
-    order: 2; /* Display left-column second */
-    padding: 10px;
-    }
-
+  .center-column {
+    order: 1; /* Display center-column first */
+    padding: 30px;
+    margin: 0px;
+  }
   .right-column {
     order: 3; /* Display right-column third */
     padding: 10px;
@@ -329,12 +331,6 @@ footer {
   .textbox {
     font-size: 14px;
     line-height: 1.5;
-  }
-
-  #gif-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   header, footer {
