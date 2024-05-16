@@ -1,4 +1,4 @@
-let blub = document.querySelector('#blub');
+let blub = document.querySelector('#blub'); //Beni-Hommage
 
 // --------------------------
 // Don't touch this
@@ -77,12 +77,25 @@ document.addEventListener('DOMContentLoaded', async () => {
                       day: 'DD.MM.YYYY' // Format for the axis labels
                   }
                 },
+                ticks: {
+                    color: '#CED766' // Color of the x-axis labels
+                },
                 beginAtZero: true
             },
               y: {
+                ticks: {
+                    color: '#CED766' // Color of the y-axis labels
+                },
                   beginAtZero: true,              
                 }
-              }
+              },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#CED766' // Color of the legend labels
+                    }
+                }
+            }
         }
     });
 });

@@ -232,7 +232,7 @@ h2 {
 
 .long-box {
   background-color: #CED766;
-  padding: 90px;
+  padding: 30px 90px;
   margin: 30px;
   border-radius: 100px;
   color: #2D0B65;
@@ -262,6 +262,10 @@ h2 {
   background-color: #66D793;
 }
 
+#berntext, #fribourgtext, #zurichtext{
+  display: none;
+}
+
 footer {
   background: #2D0B65;
   color: #DF4F4F;
@@ -285,6 +289,7 @@ footer {
       height: auto; /* Maintain aspect ratio */
     }
   }
+
 @media (max-width: 375px) {
   .container {
     flex-direction: column;
