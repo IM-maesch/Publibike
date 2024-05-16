@@ -8,7 +8,7 @@ in Chur unterdurchschnittlich gering sind. Die Nachfrage ist also zu klein und d
 mutmasslich zu teuer.
 
 Learnings
-Lieber einmal (237'894x) zu viel fragen als zu wenig
+Lieber einmal (oder 237'894x) zu viel fragen als zu wenig
 Die auf Moodle zur Verfügung gestellten Vorlagen sind nicht immer die besten
 IM-Dozierende sind sich auch nicht geng einig
 
