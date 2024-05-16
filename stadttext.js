@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to toggle visibility of text sections and update background color
     function toggleTextAndColor(cityId, textId, color) {
         // Hide all text sections
-        document.querySelectorAll('.long-box > div').forEach(function(element) {
+        document.querySelectorAll('.infobox > div').forEach(function(element) {
             element.style.display = 'none';
         });
         // Show the text section corresponding to the clicked city
         document.getElementById(textId).style.display = 'block';
-        // Update background color of .long-box container
-        document.querySelector('.long-box').style.backgroundColor = color;
+        // Update background color of .infobox container
+        document.querySelector('.infobox').style.backgroundColor = color;
     }
 
     // Event listeners for each city menu item

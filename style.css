@@ -1,9 +1,10 @@
-/* Grundlegende Einstellungenen */
+
 body {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 20px;
-  background-color: #f0f0f0;
-  color: #333;
+  padding: 0;
+  background-color: #2D0B65;
+  color: #DF4F4F;
 }
 
 /* Define the custom font */
@@ -20,21 +21,10 @@ h1 {
   text-align: center; /* Example alignment, adjust as needed */
 }
 
-/* Centering and maintaining aspect ratio for the GIF */
-#home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 100vh; /* Full height of the viewport */
-}
-
 #gif-container {
   position: relative;
   width: 600px; /* Width of the GIF */
   height: 600px; /* Height of the GIF */
-  margin: 0 auto; /* Centers the container horizontally */
 }
 
 #veloAnimation, #veloAnimation_bunt {
@@ -118,14 +108,6 @@ tr:nth-child(even) {
 
 /* Versuch_Lina */
 
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #2D0B65;
-  color: #DF4F4F;
-}
-
 header {
   background: #2D0B65;
   padding: 10px 0;
@@ -181,50 +163,42 @@ h1 {
   color: #DF4F4F; /* Farbe für Website */
 }
 
-.failthesen h2 {
-  color: #CED766; /* Farbe für links unten */
-}
-
 h3{
   margin: 0px 0px 40px;
 }
 
-.container {
+.flexbox {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.left-column {
-  display: flex;
-  flex-direction: column;
-  margin: 120px;
-  text-align: center;
-  max-width: 200px;
 }
 
 .right-column {
   display: flex;
   flex-direction: column;
   flex: 1;
-  margin: 20px;
-}
-
-.center-column {
-  flex: 60;
-  margin: 50px;
+  margin: 20px auto;
+  padding: 20px;
 }
 
 .failthesen {
   color:  #CED766;
+  margin-left: 40px;
+  flex: 1; /* Allow the container to grow and fill available space */
+  max-width: calc(100% - 620px); /* Maximum width is the width of the viewport minus the width of the gif container and margin */
 }
 
-.long-box {
+.failthesen p{
+  min-width: 200px;
+}
+
+.infobox {
   background-color: #CED766;
   padding: 30px 90px;
   margin: 30px;
   border-radius: 100px;
   color: #2D0B65;
+  width: 100%;
 }
 
 .graphic {
@@ -237,6 +211,11 @@ h3{
 
 #berntext, #fribourgtext, #zurichtext{
   display: none;
+}
+
+#standortaktivitaet{
+  margin-bottom: 100px;
+  width: 800px;
 }
 
 footer {
@@ -252,49 +231,49 @@ footer {
 
 /* Responsive Design in Arbeit */
 @media (max-width: 420px) {
-    #gif-container {
-      width: 100%; /* Full width on small screens */
-      height: auto; /* Maintain aspect ratio */
-    }
-  
-    #gif-container img {
-      width: 100%; /* Full width of the parent container */
-      height: auto; /* Maintain aspect ratio */
-    }
-  }
-
-@media (max-width: 375px) {
   .container {
     flex-direction: column;
     padding: 30px;
   }
 
-  .center-column {
-    order: 1; /* Display center-column first */
-    padding: 30px;
-    margin: 0px;
-  }
   .right-column {
     order: 3; /* Display right-column third */
     padding: 10px;
-    margin: 30px;
+    margin: 30px auto;
+    max-width: 1000px;
   }
 
-  .long-box {
-    padding: 50px;
-    margin: 10px 0;
+  .infobox {
+    padding: 20px;
+    margin: 20px 0;
     border-radius: 180px;
+    max-width: 90%;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .flexbox {
+    flex-direction: column; /* Change flex direction to column when screen size is smaller */
+  }
+
+  #gif-container {
+    margin: 0 auto; /* Center the gif container */
     max-width: 400px;
+    max-height: 400px;
   }
 
   .failthesen {
     font-size: 14px;
     line-height: 1.5;
+    max-width: 100%; /* Allow the text container to take full width when it's under the gif container */
+    margin: 20px 0;
+    padding: 2%;
+    text-align: center;
   }
 
   header, footer {
     padding: 5px 0;
-    max-width: 400px;
+    max-width: 420px;
   }
 
   nav ul li {
@@ -302,5 +281,8 @@ footer {
     }
 }
 
-
+#standortaktivitaet{
+  margin-bottom: 100px;
+  width: 400px;
+}
 
