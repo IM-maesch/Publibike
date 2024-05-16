@@ -72,17 +72,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                 type: 'time', // Use time scale for x-axis
                 time: {
                   unit: 'day', // Display timestamps by day
-                    tooltipFormat: 'll', // Format for tooltips (optional)
+                    tooltipFormat: 'DD.MM.YYYY, HH:mm', // Format for tooltips (optional)
                     displayFormats: {
-                      day: 'YYYY-MM-DD' // Format for the axis labels
+                      day: 'DD.MM.YYYY' // Format for the axis labels
                   }
                 },
                 beginAtZero: true
             },
               y: {
-                  beginAtZero: true
+                  beginAtZero: true,              
+                }
               }
-            }
         }
     });
 });
