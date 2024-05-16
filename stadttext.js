@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to toggle visibility of text sections and update background color
     function toggleTextAndColor(cityId, textId, color) {
         // Hide all text sections
-        document.querySelectorAll('.long-box > p').forEach(function(element) {
+        document.querySelectorAll('.long-box > div').forEach(function(element) {
             element.style.display = 'none';
         });
         // Show the text section corresponding to the clicked city

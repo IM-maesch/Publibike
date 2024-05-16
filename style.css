@@ -1,13 +1,8 @@
 /* Grundlegende Einstellungenen */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
   background-color: #f0f0f0;
-  color: #333;
-}
-
-h2 {
   color: #333;
 }
 
@@ -157,7 +152,6 @@ nav ul li a {
   font-weight: bold;
 }
 
-
 #menuchur {
   color: #CED766;
 }
@@ -174,22 +168,25 @@ nav ul li a {
   color: #66D793;
 }
 
-h1, h2, .menu, .stadtbox{
+h1, h2, h3, .menu{
   font-family: 'Nico Moji', sans-serif;
   text-align: center;
 }
 
 h1, h2 {
-  margin-top: 60px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 h1 {
   color: #DF4F4F; /* Farbe für Website */
 }
 
-h2 {
+.failthesen h2 {
   color: #CED766; /* Farbe für links unten */
+}
+
+h3{
+  margin: 0px 0px 40px;
 }
 
 .container {
@@ -218,14 +215,6 @@ h2 {
   margin: 50px;
 }
 
-.stadtbox {
-  padding: 40px;
-  margin: 20px 0;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-  color: #2D0B65;
-}
-
 .failthesen {
   color:  #CED766;
 }
@@ -244,22 +233,6 @@ h2 {
   margin: 20px 0;
   border-radius: 60px;
   color: #2D0B65;
-}
-
-#chur {
-  background-color:  #CED766;
-}
-
-#bern {
-  background-color: #946AEE;
-}
-
-#fribourg {
-  background-color: #73D9EF;
-}
-
-#zurich {
-  background-color: #66D793;
 }
 
 #berntext, #fribourgtext, #zurichtext{
