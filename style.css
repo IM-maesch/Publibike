@@ -157,31 +157,31 @@ nav ul li a {
   font-weight: bold;
 }
 
-.menuchur {
+
+#menuchur {
   color: #CED766;
-  font-family: 'Nico Moji', sans-serif; /* Chur */
 }
 
-.menubern {
+#menubern {
   color: #946AEE;
-  font-family: 'Nico Moji', sans-serif; /* Bern */
 }
 
-.menufribourg {
+#menufribourg {
   color: #73D9EF;
-  font-family: 'Nico Moji', sans-serif; /* Fribourg */
 }
 
-.menuzurich {
-  color: #66D793; 
-  font-family: 'Nico Moji', sans-serif; /* Zürich */
+#menuzurich {
+  color: #66D793;
+}
+
+h1, h2, .menu, .stadtbox{
+  font-family: 'Nico Moji', sans-serif;
+  text-align: center;
 }
 
 h1, h2 {
   margin-top: 60px;
   margin-bottom: 10px;
-  font-family: 'Nico Moji', sans-serif;
-  text-align: center;
 }
 
 h1 {
@@ -224,11 +224,9 @@ h2 {
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
   color: #2D0B65;
-  font-family: 'Nico Moji', sans-serif;
-  text-align: center;
 }
 
-.textbox {
+.failthesen {
   color:  #CED766;
 }
 
@@ -276,13 +274,7 @@ footer {
 
 
 /* Responsive Design in Arbeit */
-@media (max-width: 375px) {
-  .container {
-    flex-direction: column;
-    padding: 30px;
-  }
-
-  @media (max-width: 420px) {
+@media (max-width: 420px) {
     #gif-container {
       width: 100%; /* Full width on small screens */
       height: auto; /* Maintain aspect ratio */
@@ -292,6 +284,11 @@ footer {
       width: 100%; /* Full width of the parent container */
       height: auto; /* Maintain aspect ratio */
     }
+  }
+@media (max-width: 375px) {
+  .container {
+    flex-direction: column;
+    padding: 30px;
   }
 
   .center-column {
@@ -312,7 +309,7 @@ footer {
     max-width: 400px;
   }
 
-  .textbox {
+  .failthesen {
     font-size: 14px;
     line-height: 1.5;
   }
