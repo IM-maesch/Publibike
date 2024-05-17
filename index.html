@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <title>Publibye Chur</title>
+  <meta content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="library/chart.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="library/moment.js"></script>
+  <script src="library/chartjs-adapter-moment.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Publibye Chur</h1>
+    <nav>
+      <ul>
+        <li><a class="menu" id="menuchur" href="#">Chur</a></li>
+        <li><a class="menu" id="menubern" href="#">Bern</a></li>
+        <li><a class="menu" id="menufribourg" href="#">Fribourg</a></li>
+        <li><a class="menu" id="menuzurich" href="#">Zürich</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="content">
+    <div class="flexbox">
+      <div class="infobox">
+        <div id="churtext">
+          <h2>Chur</h2>
+          <h3>40'992 EW</h3>
+          <p>Chur ist in einer neun Monate dauernden Testphase für das Publibike-System und hat 10 Stationen.
+            Der Betrieb wird Ende Juni 2024 eingestellt. Unsere Grafik soll einen Anhaltspunkt geben, weshalb
+            sich Publibike in der Stadt Chur nicht durchgesetzt haben könnte. Dabei wird nicht nur die
+            Nutzbarkeit angeschaut, sondern auch die Relation mit den Einwohnerzahlen. Beispielsweise ist Chur
+            in dieser Grössenordnung vergleichbar mit Fribourg. Wir haben drei Hypothesen aufgestellt, welche
+            Einfluss auf den Misserfolg gehabt haben könnten.</p>
+        </div>
+        <div id="berntext">
+          <h2>Bern</h2>
+          <h3>145'873 EW</h3>
+          <p>Publibike spielt in Bern eine bedeutende Rolle bei der Förderung des Fahrradverleihsystems.
+            Mit über 230 Stationen in der Stadt leistet es einen wichtigen Beitrag zur Mobilität und zur
+            Reduzierung von Verkehrsstau. Seit dem Start des Systems im Jahr 2017 hat sich Publibike zu
+            einer beliebten Option für Einheimische und Touristen entwickelt, die die Stadt auf
+            umweltfreundliche Weise erkunden möchten. Dank der breiten Verfügbarkeit von Fahrrädern und
+            Stationen in der ganzen Stadt ist Publibike zu einem integralen Bestandteil des öffentlichen
+            Verkehrssystems in Bern geworden.</p>
+        </div>
+        <div id="fribourgtext">
+          <h2>Fribourg</h2>
+          <h3>39'023 EW</h3>
+          <p>Fribourg ist halt so eine bilinguale Stadt mit etwa gleich vielen Einwohnerinnen und
+            Einwohner wie Chur. Aber die Romands sind halt cooler und umweltfreundlicher und nutzen deshalb
+            Publibike so häufig wie die Zürcherinnen und Zürcher, auch wenn sie nur einen Zehntel deren
+            Einwohnerinnen und Einwohner haben 8)</p>
+        </div>
+        <div id="zurichtext">
+          <h2>Zürich</h2>
+          <h3>447'082 EW</h3>
+          <p>Publibike ist in Zürich mit 170 Stationen präsent und bietet den Bewohnerinnen und Bewohnern der
+            größten Stadt der Schweiz eine bequeme und umweltfreundliche Möglichkeit, sich fortzubewegen,
+            während es gleichzeitig dazu beiträgt, den Verkehr zu entlasten und die Luftqualität zu verbessern.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="lower-content">
+    <div class="flexbox">
+
+      <div id="gif-container">
+        <img id="veloAnimation" src="Velo Animation rot q.gif" alt="Animated GIF">
+        <img id="veloAnimation_bunt" src="Velo Animation bunt q.gif" alt="Animated GIF">
+      </div>
+
+      <div class="failthesen">
+        <br><br><br><br>
+        <h2>These 01</h2>
+        <p>Churer Strassen haben ein steileres Gefälle als die anderen Städte, weshalb die Motivation zum
+          Velofahren sinkt.</p>
+        <br>
+        <h2>These 02</h2>
+        <p>Bern, Fribourg und Zürich kümmern sich mehr um eine sichere Veloinfrastruktur, weshalb das
+          Velofahren populärer ist.</p>
+        <br>
+        <h2>These 03</h2>
+        <p>Die Publibike-Standorte von Chur sind unpassend gewählt. Sie fehlen an einigen öffentlichen
+          Institutionen wie zum Beispiel dem Somedia Haus.</p>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <!--Diagramm, unscheinbar im Code aber echt krass im Browser-->
+      <canvas id="standortaktivitaet"></canvas>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Publibike Spotter | <a href="team.html">Team Patschifig</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="stadttext.js"></script>
+</body>
+
+</html>

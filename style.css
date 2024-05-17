@@ -1,14 +1,51 @@
-/* Grundlegende Einstellungen */
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 20px;
-  background-color: #f0f0f0;
-  color: #333;
+  padding: 0;
+  background-color: #2D0B65;
+  color: #DF4F4F;
 }
 
-h1, h2 {
-  color: #333;
+/* Define the custom font */
+@font-face {
+  font-family: 'Nico Moji';
+  src: url('Fonts/Nico Moji/nicomoji-plus_v0.9.ttf') format('truetype');
+}
+
+/* Apply the custom font to h1 elements */
+h1 {
+  font-family: 'Nico Moji', sans-serif;
+  font-size: 3.5em; /* Adjust the font size as needed */
+  color: #DF4F4F; /* Example color, adjust as needed */
+  text-align: center; /* Example alignment, adjust as needed */
+}
+
+#gif-container {
+  position: relative;
+  width: 600px; /* Width of the GIF */
+  height: 600px; /* Height of the GIF */
+}
+
+#veloAnimation, #veloAnimation_bunt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+#veloAnimation_bunt {
+  opacity: 0;
+}
+
+#gif-container:hover #veloAnimation_bunt {
+  opacity: 1;
+}
+
+#gif-container:hover #veloAnimation {
+  opacity: 0;
 }
 
 /* Formulare und Eingabefelder */
@@ -34,7 +71,7 @@ button:hover {
 
 /* Links */
 a {
-  color: #007bff;
+  color: white;
   text-decoration: none;
 }
 
@@ -43,11 +80,6 @@ a:hover {
 }
 
 /* Abschnitte und Abstand */
-h1, h2 {
-  margin-top: 40px;
-  margin-bottom: 10px;
-}
-
 p {
   line-height: 1.6;
 }
@@ -73,3 +105,207 @@ th {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+
+/* Versuch_Lina */
+
+header {
+  background: #2D0B65;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#menuchur {
+  color: #CED766;
+}
+
+#menubern {
+  color: #946AEE;
+}
+
+#menufribourg {
+  color: #73D9EF;
+}
+
+#menuzurich {
+  color: #66D793;
+}
+
+h1, h2, h3, .menu{
+  font-family: 'Nico Moji', sans-serif;
+  text-align: center;
+}
+
+h1, h2 {
+  margin: 10px 0;
+}
+
+h1 {
+  color: #DF4F4F; /* Farbe für Website */
+}
+
+h3{
+  margin: 0px 0px 40px;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.failthesen {
+  color:  #CED766;
+  margin-left: 40px;
+  flex: 1; /* Allow the container to grow and fill available space */
+  max-width: calc(100% - 620px); /* Maximum width is the width of the viewport minus the width of the gif container and margin */
+}
+
+.failthesen p{
+  min-width: 200px;
+}
+
+.infobox {
+  background-color: #CED766;
+  padding: 30px 90px;
+  margin: 30px;
+  border-radius: 100px;
+  color: #2D0B65;
+  width: 100%;
+}
+
+.graphic {
+  background-color: white;
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 60px;
+  color: #2D0B65;
+}
+
+.team {
+  color: #CED766;
+  padding: 20px; /* Add padding to give space on the sides */
+  text-align: center; /* Center align the text */
+  max-width: 1000px; /* Set a maximum width for the container */
+  align-items: center;
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.team-member {
+  margin-bottom: 20px;
+  text-align: center; /* Center align the text within team-member */
+}
+
+.team-member p {
+  margin: 0 auto; /* Center the paragraphs */
+  padding: 0 20px; /* Add padding to both sides */
+  max-width: 50%; /* Set a maximum width for the paragraphs */
+}
+
+#berntext, #fribourgtext, #zurichtext {
+  display: none;
+}
+
+#standortaktivitaet{
+  margin-bottom: 100px;
+  width: 800px;
+}
+
+footer {
+  background: #2D0B65;
+  color: #DF4F4F;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #DF4F4F;
+}
+
+/* ------------------- Responsive Design ------------------- */
+@media (max-width: 420px) {
+  .container {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .right-column {
+    order: 3; /* Display right-column third */
+    padding: 10px;
+    margin: 30px auto;
+    max-width: 1000px;
+  }
+
+  .infobox {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 180px;
+    max-width: 90%;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .flexbox {
+    flex-direction: column; /* Change flex direction to column when screen size is smaller */
+  }
+
+  #gif-container {
+    margin: 0 auto; /* Center the gif container */
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  .failthesen {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 100%; /* Allow the text container to take full width when it's under the gif container */
+    margin: 20px 0;
+    padding: 2%;
+    text-align: center;
+  }
+
+  header, footer {
+    padding: 5px 0;
+    max-width: 420px;
+  }
+
+  nav ul li {
+    display: block;
+    }
+}
+
+#standortaktivitaet{
+  margin-bottom: 100px;
+  width: 400px;
+}
+
