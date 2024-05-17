@@ -186,6 +186,7 @@ h3{
   margin-left: 40px;
   flex: 1; /* Allow the container to grow and fill available space */
   max-width: calc(100% - 620px); /* Maximum width is the width of the viewport minus the width of the gif container and margin */
+padding-right: 100px;
 }
 
 .failthesen p{
@@ -248,7 +249,7 @@ footer {
   width: 100%;
 }
 
-footer a {
+footer p a {
   color: #DF4F4F;
 }
 
