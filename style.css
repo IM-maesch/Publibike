@@ -210,13 +210,18 @@ h3{
 }
 
 .team {
-  color:  #CED766;
-align-content: center; 
-padding: 100px; 
+  color: #CED766;
+  padding: 20px; /* Add padding to give space on the sides */
+  text-align: center; /* Center align the text */
+  max-width: 1000px; /* Set a maximum width for the container */
+  align-items: center;
 }
 
+.team-member {
+  margin-bottom: 20px;
 #berntext, #fribourgtext, #zurichtext{
   display: none;
+}
 }
 
 #standortaktivitaet{
