@@ -247,6 +247,9 @@ footer {
   width: 100%;
 }
 
+footer a {
+  color: #DF4F4F;
+}
 
 /* ------------------- Responsive Design ------------------- */
 @media (max-width: 420px) {
