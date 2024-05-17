@@ -209,6 +209,12 @@ h3{
   color: #2D0B65;
 }
 
+.team {
+  color:  #CED766;
+align-content: center; 
+padding: 100px; 
+}
+
 #berntext, #fribourgtext, #zurichtext{
   display: none;
 }
