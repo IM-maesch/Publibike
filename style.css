@@ -215,6 +215,7 @@ h3{
   text-align: center; /* Center align the text */
   max-width: 1000px; /* Set a maximum width for the container */
   align-items: center;
+  margin: 0 auto; /* Center the container horizontally */
 }
 
 .team-member {
@@ -225,7 +226,7 @@ h3{
 .team-member p {
   margin: 0 auto; /* Center the paragraphs */
   padding: 0 20px; /* Add padding to both sides */
-  max-width: 80%; /* Set a maximum width for the paragraphs */
+  max-width: 50%; /* Set a maximum width for the paragraphs */
 }
 
 #berntext, #fribourgtext, #zurichtext {
