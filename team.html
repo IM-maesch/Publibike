@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ciao Publichur</title>
+    <meta content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="library/chart.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="library/moment.js"></script>
+    <script src="library/chartjs-adapter-moment.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a class="menu" id="menuchur" href="#">Chur</a></li>
+                <li><a class="menu" id="menubern" href="#">Bern</a></li>
+                <li><a class="menu" id="menufribourg" href="#">Fribourg</a></li>
+                <li><a class="menu" id="menuzurich" href="#">Zürich</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="lower-content">
+
+        <div class="failthesen">
+            <br><br><br><br>
+            <h2>Anja Streit</h2>
+            <p>Churer Strassen haben ein steileres Gefälle als die anderen Städte, weshalb die Motivation zum
+                Velofahren sinkt.</p>
+            <br>
+            <h2>Lina Wieland</h2>
+            <p>Bern, Fribourg und Zürich kümmern sich mehr um eine sichere Veloinfrastruktur, weshalb das
+                Velofahren populärer ist.</p>
+            <br>
+            <h2>Manuela Aeschlimann</h2>
+            <p>Die Publibike-Standorte von Chur sind unpassend gewählt. Sie fehlen an einigen öffentlichen
+                Institutionen wie zum Beispiel dem Somedia Haus.</p>
+        </div>
+
+        <div class="right-column">
+            <!--Diagramm, unscheinbar im Code aber echt krass im Browser-->
+            <canvas id="standortaktivitaet"></canvas>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Publibike Spotter</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="stadttext.js"></script>
+</body>
+
+</html>
